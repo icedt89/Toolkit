@@ -8,13 +8,13 @@ Feel free to fork, bugfix, extend and use it.
 
 ## Features
 
-+ Managed wrapper for native Windows hotkeys (and Atoms...)
-+ Behaviors for WPF which intercepts window messages
-+ Managed wrapper for load library (extracting resources from executables and dll's...)
-+ Managed wrapper for native Windows hooks (low level keyboard and mouse hook...)
-+ Managed implementation for reading .ico files
-+ Managed wrapper for manipulating affinity masks (CPU-Core assignment for Windows processes and threads)
-+ And more extension methods and utilities
++ managed wrapper for native Windows hotkeys (and Atoms...)
++ behaviors for WPF which intercepts window messages
++ managed wrapper for load library (extracting resources from executables and dll's...)
++ managed wrapper for native Windows hooks (low level keyboard and mouse hook...)
++ managed implementation for reading .ico files
++ managed wrapper for manipulating affinity masks (CPU-Core assignment for Windows processes and threads)
++ and more extension methods and utilities
 
 ## License
 
