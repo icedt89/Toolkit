@@ -90,7 +90,7 @@
             };
 
             // Act, Arrange
-            couldBeIconFileFunctionActor.ShouldThrow<ArgumentNullException>();
+            couldBeIconFileFunctionActor.Should().Throw<ArgumentNullException>();
         }
 
         [TestMethod]
@@ -173,7 +173,7 @@
                 iconExtractor.Dispose();
 
                 // Act, Arrange
-                enumerateIconsFunctionActor.ShouldThrow<ObjectDisposedException>();
+                enumerateIconsFunctionActor.Should().Throw<ObjectDisposedException>();
             }
         }
 
@@ -222,7 +222,7 @@
                 iconExtractor.Dispose();
 
                 // Act, Arrange
-                disposeFunctionActor.ShouldNotThrow<ObjectDisposedException>();
+                disposeFunctionActor.Should().NotThrow<ObjectDisposedException>();
             }
         }
     }

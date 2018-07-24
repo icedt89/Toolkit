@@ -63,7 +63,7 @@
             dummyLowLevelMouseWindowsHook.Uninstall();
 
             // Assert
-            dummyLowLevelMouseWindowsHook.Invoking(h => h.Uninstall()).ShouldThrow<ObjectDisposedException>();
+            dummyLowLevelMouseWindowsHook.Invoking(h => h.Uninstall()).Should().Throw<ObjectDisposedException>();
         }
 
         [TestMethod]
@@ -76,7 +76,7 @@
             dummyLowLevelMouseWindowsHook.Uninstall();
 
             // Assert
-            dummyLowLevelMouseWindowsHook.Invoking(h => h.Uninstall()).ShouldThrow<ObjectDisposedException>();
+            dummyLowLevelMouseWindowsHook.Invoking(h => h.Uninstall()).Should().Throw<ObjectDisposedException>();
         }
 
         [TestMethod]
@@ -90,7 +90,7 @@
             }
 
             // Act, Assert
-            dummyLowLevelMouseWindowsHook.Invoking(h => h.Dispose()).ShouldNotThrow<ObjectDisposedException>();
+            dummyLowLevelMouseWindowsHook.Invoking(h => h.Dispose()).Should().NotThrow<ObjectDisposedException>();
         }
 
         [TestMethod]
@@ -100,7 +100,7 @@
             var dummyLowLevelMouseWindowsHook = new DummyLowLevelMouseWindowsHook((identifier, kbdllhookstruct) => { });
 
             // Act, Assert
-            dummyLowLevelMouseWindowsHook.Invoking(h => h.Dispose()).ShouldNotThrow<ObjectDisposedException>();
+            dummyLowLevelMouseWindowsHook.Invoking(h => h.Dispose()).Should().NotThrow<ObjectDisposedException>();
         }
     }
 }

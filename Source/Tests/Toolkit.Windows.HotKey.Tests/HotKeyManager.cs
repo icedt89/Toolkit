@@ -58,7 +58,7 @@
                     Action hotKeyAction = null;
 
                     // Act, Assert
-                    dummyHotKeyManager.Invoking(hkm => hkm.Register(dummyWindow, hotKeyModifier, virtualKeyCode, hotKeyAction)).ShouldThrow<ArgumentNullException>();
+                    dummyHotKeyManager.Invoking(hkm => hkm.Register(dummyWindow, hotKeyModifier, virtualKeyCode, hotKeyAction)).Should().Throw<ArgumentNullException>();
                 }
             }
         }
@@ -173,7 +173,7 @@
                 }
 
                 // Act, Assert
-                dummyHotKeyManager.Invoking(hkm => hkm.Register(dummyWindow, hotKeyModifier, virtualKeyCode, hotKeyAction)).ShouldThrow<ObjectDisposedException>();
+                dummyHotKeyManager.Invoking(hkm => hkm.Register(dummyWindow, hotKeyModifier, virtualKeyCode, hotKeyAction)).Should().Throw<ObjectDisposedException>();
             }
         }
 
@@ -188,7 +188,7 @@
             }
 
             // Act, Assert
-            dummyHotKeyManager.Invoking(hkm => hkm.Unregister(hotKeyId)).ShouldThrow<ObjectDisposedException>();
+            dummyHotKeyManager.Invoking(hkm => hkm.Unregister(hotKeyId)).Should().Throw<ObjectDisposedException>();
         }
 
         [TestMethod]
@@ -225,7 +225,7 @@
             }
 
             // Act, Assert
-            dummyHotKeyManager.Invoking(hkm => hkm.Unregister(hotKeyModifier, virtualKeyCode)).ShouldThrow<ObjectDisposedException>();
+            dummyHotKeyManager.Invoking(hkm => hkm.Unregister(hotKeyModifier, virtualKeyCode)).Should().Throw<ObjectDisposedException>();
         }
 
         [TestMethod]
@@ -262,7 +262,7 @@
             }
 
             // Act, Assert
-            dummyHotKeyManager.Invoking(hkm => hkm.HandleHotKey(hotKeyModifier, virtualKeyCode)).ShouldThrow<ObjectDisposedException>();
+            dummyHotKeyManager.Invoking(hkm => hkm.HandleHotKey(hotKeyModifier, virtualKeyCode)).Should().Throw<ObjectDisposedException>();
         }
 
         [TestMethod]
@@ -355,7 +355,7 @@
                 }
 
                 // Act, Assert
-                dummyHotKeyManager.Invoking(hkm => hkm.Dispose()).ShouldNotThrow<ObjectDisposedException>();
+                dummyHotKeyManager.Invoking(hkm => hkm.Dispose()).Should().NotThrow<ObjectDisposedException>();
             }
         }
     }

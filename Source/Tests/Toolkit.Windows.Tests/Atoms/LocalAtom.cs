@@ -21,7 +21,7 @@
             };
 
             // Act, Assert
-            createNewFunctionActor.ShouldThrow<ArgumentNullException>();
+            createNewFunctionActor.Should().Throw<ArgumentNullException>();
         }
 
         [TestMethod]
@@ -37,7 +37,7 @@
             };
 
             // Act, Assert
-            fromExistingFunctionActor.ShouldThrow<ArgumentNullException>();
+            fromExistingFunctionActor.Should().Throw<ArgumentNullException>();
         }
 
         [TestMethod]
@@ -85,7 +85,7 @@
             };
 
             // Act, Assert
-            getAtomNameFunctionActor.ShouldThrow<ArgumentOutOfRangeException>();
+            getAtomNameFunctionActor.Should().Throw<ArgumentOutOfRangeException>();
         }
 
         [TestMethod]
@@ -107,7 +107,7 @@
             };
 
             // Act, Assert
-            getAtomNameFunctionActor.ShouldThrow<Win32Exception>();
+            getAtomNameFunctionActor.Should().Throw<Win32Exception>();
         }
 
         [TestMethod]
@@ -126,7 +126,7 @@
             using (JanHafner.Toolkit.Windows.Atoms.LocalAtom.CreateNew(localAtomName))
             {
                 // Assert
-                createNewFunctionActor.ShouldThrow<Win32Exception>();
+                createNewFunctionActor.Should().Throw<Win32Exception>();
             }
         }
 
@@ -151,7 +151,7 @@
                 };
 
                 // Assert
-                fromExistingFunctionActor.ShouldNotThrow<Win32Exception>();
+                fromExistingFunctionActor.Should().NotThrow<Win32Exception>();
             }
         }
 
@@ -181,7 +181,7 @@
             var localAtom = JanHafner.Toolkit.Windows.Atoms.LocalAtom.CreateNew(localAtomName);
 
             // Act
-            localAtom.Invoking(ga => ga.Delete()).ShouldNotThrow();
+            localAtom.Invoking(ga => ga.Delete()).Should().NotThrow();
 
             // Assert
             localAtom.Id.Should().Be(0);
@@ -198,7 +198,7 @@
             localAtom.Delete();
 
             // Act, Assert
-            localAtom.Invoking(ga => ga.Delete()).ShouldThrow<ObjectDisposedException>();
+            localAtom.Invoking(ga => ga.Delete()).Should().Throw<ObjectDisposedException>();
         }
 
         [TestMethod]
@@ -230,7 +230,7 @@
             }
 
             // Act, Assert
-            localAtom.Invoking(ga => ga.Dispose()).ShouldNotThrow<ObjectDisposedException>();
+            localAtom.Invoking(ga => ga.Dispose()).Should().NotThrow<ObjectDisposedException>();
         }
     }
 }

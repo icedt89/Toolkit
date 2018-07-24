@@ -66,7 +66,7 @@
             dummyLowLevelKeyboardWindowsHook.Uninstall();
 
             // Assert
-            dummyLowLevelKeyboardWindowsHook.Invoking(h => h.Uninstall()).ShouldThrow<ObjectDisposedException>();
+            dummyLowLevelKeyboardWindowsHook.Invoking(h => h.Uninstall()).Should().Throw<ObjectDisposedException>();
         }
 
         [TestMethod]
@@ -79,7 +79,7 @@
             dummyLowLevelKeyboardWindowsHook.Uninstall();
 
             // Assert
-            dummyLowLevelKeyboardWindowsHook.Invoking(h => h.Uninstall()).ShouldThrow<ObjectDisposedException>();
+            dummyLowLevelKeyboardWindowsHook.Invoking(h => h.Uninstall()).Should().Throw<ObjectDisposedException>();
         }
 
         [TestMethod]
@@ -93,7 +93,7 @@
             }
 
             // Act, Assert
-            dummyLowLevelKeyboardWindowsHook.Invoking(h => h.Dispose()).ShouldNotThrow<ObjectDisposedException>();
+            dummyLowLevelKeyboardWindowsHook.Invoking(h => h.Dispose()).Should().NotThrow<ObjectDisposedException>();
         }
 
         [TestMethod]
@@ -103,7 +103,7 @@
             var dummyLowLevelKeyboardWindowsHook = new DummyLowLevelKeyboardWindowsHook((identifier, kbdllhookstruct) => { });
 
             // Act, Assert
-            dummyLowLevelKeyboardWindowsHook.Invoking(h => h.Dispose()).ShouldNotThrow<ObjectDisposedException>();
+            dummyLowLevelKeyboardWindowsHook.Invoking(h => h.Dispose()).Should().NotThrow<ObjectDisposedException>();
         }
     }
 }
