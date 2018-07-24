@@ -24,7 +24,7 @@
             };
 
             // Act, Assert
-            registerFunctionActor.ShouldThrow<ArgumentNullException>();
+            registerFunctionActor.Should().Throw<ArgumentNullException>();
         }
 
         [TestMethod]
@@ -41,7 +41,7 @@
             };
 
             // Act, Assert
-            registerFunctionActor.ShouldThrow<ArgumentOutOfRangeException>();
+            registerFunctionActor.Should().Throw<ArgumentOutOfRangeException>();
         }
 
         [TestMethod]
@@ -87,7 +87,7 @@
             };
 
             // Act
-            registerFunctionActor.ShouldThrow<Win32Exception>();
+            registerFunctionActor.Should().Throw<Win32Exception>();
         }
 
         [TestMethod]
@@ -108,7 +108,7 @@
                     };
 
                     // Act
-                    registerFunctionActor.ShouldThrow<Win32Exception>().Where(ex => ex.NativeErrorCode == hotKeyAlreadyRegisteredErrorCode);
+                    registerFunctionActor.Should().Throw<Win32Exception>().Where(ex => ex.NativeErrorCode == hotKeyAlreadyRegisteredErrorCode);
                 }
             }
         }
@@ -129,7 +129,7 @@
                 globalHotKey = JanHafner.Toolkit.Windows.HotKey.GlobalHotKey.Register(windowHandle, hotKeyModifier, virtualKeyCode);
             }
 
-            globalHotKey.Invoking(ghk => ghk.Unregister()).ShouldThrow<Win32Exception>();
+            globalHotKey.Invoking(ghk => ghk.Unregister()).Should().Throw<Win32Exception>();
         }
 
         [TestMethod]
@@ -197,7 +197,7 @@
                 globalHotKey.Unregister();
 
                 // Act, Assert
-                globalHotKey.Invoking(ghk => ghk.Unregister()).ShouldThrow<ObjectDisposedException>();
+                globalHotKey.Invoking(ghk => ghk.Unregister()).Should().Throw<ObjectDisposedException>();
             }
         }
 
@@ -240,7 +240,7 @@
                 }
 
                 // Act, Assert
-                globalHotKey.Invoking(ghk => ghk.Dispose()).ShouldNotThrow<ObjectDisposedException>();
+                globalHotKey.Invoking(ghk => ghk.Dispose()).Should().NotThrow<ObjectDisposedException>();
             }
         }
     }

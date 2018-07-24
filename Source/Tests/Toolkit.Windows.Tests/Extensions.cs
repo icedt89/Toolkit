@@ -21,7 +21,7 @@
             };
 
             // Act, Assert
-            toUInt32FunctionActor.ShouldThrow<ArgumentNullException>();
+            toUInt32FunctionActor.Should().Throw<ArgumentNullException>();
         }
 
         [TestMethod]
@@ -36,7 +36,7 @@
             };
 
             // Act, Assert
-            toUInt32FunctionActor.ShouldThrow<ArgumentException>();
+            toUInt32FunctionActor.Should().Throw<ArgumentException>();
         }
 
         [TestMethod]
@@ -58,7 +58,7 @@
             // Assert
             clonedIcon.Should().NotBeNull();
             clonedIcon.Handle.Should().NotBe(iconHandle);
-            fromHandleFunctionActor.ShouldThrow<Exception>();
+            fromHandleFunctionActor.Should().Throw<Exception>();
         }
 
         [TestMethod]
@@ -72,7 +72,7 @@
             };
 
             // Act, Assert
-            fromHandleFunctionActor.ShouldThrow<Exception>();
+            fromHandleFunctionActor.Should().Throw<Exception>();
         }
     }
 }
